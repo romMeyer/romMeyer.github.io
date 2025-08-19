@@ -144,7 +144,7 @@
             },
             {
                "title": "RESILIEAU",
-               "content": "Lors de la prise en compte d’un résiliau, j’ai identifié une erreur dans le code qui introduisait une faille d’injection. En effectuant des tests avec Postman, j’ai constaté qu’il était possible de modifier son propre identifiant dans la requête HTTP et ainsi accéder ou altérer les données d’autres utilisateurs. Cette vulnérabilité représentait un risque majeur en matière de sécurité et de confidentialité. J’ai alors remonté l’anomalie et travaillé à la mise en place de contrôles renforcés côté serveur (vérification des droits et filtrage des paramètres) afin de corriger la faille et sécuriser l’application."
+               "content": "Lors de la prise en compte d’un résiliau, j’ai identifié une erreur dans le code qui introduisait une faille d’injection. En effectuant des tests avec Postman, j’ai constaté qu’il était possible de modifier son propre identifiant dans la requête HTTP et ainsi accéder ou altérer les données d’autres utilisateurs. Cette vulnérabilité représentait un risque majeur en matière de sécurité et de confidentialité. J’ai alors remonté l’anomalie et travaillé à la mise en place de contrôles renforcés côté serveur (vérification des droits et filtrage des paramètres) afin de corriger la faille et sécuriser l’application. "
             }
          ]
        },
@@ -185,8 +185,8 @@
             {
                "title":"Fonctionnement du RAG",
                "image":"./assets/projets/rag/rag_1.png",
-               "content":"Le fonctionnement du RAG commence par la segmentation des documents en chunks (morceaux de 1000 caractères) cohérents. Chaque chunk est ensuite transformé en vecteur à l’aide d’un modèle d’embedding. Ces vecteurs sont stockés dans une base vectorielle (FAISS). Lorsqu’une question est posée, elle est elle-même vectorisée puis comparée aux vecteurs de la base afin de retrouver les passages les plus pertinents.",
-               "content2":"Les passages récupérés sont ensuite injectés dans le prompt du LLM (Mistral AI), qui génère la réponse à la question posée.",
+               "content":"Le fonctionnement de la solution repose sur un pipeline technique structuré en plusieurs étapes. Tout d’abord, les utilisateurs déposent leurs fichiers PDF sur la plateforme. Afin de rendre l’ensemble des informations exploitables, un processus d’OCR (Reconnaissance Optique de Caractères) est appliqué pour convertir les éventuelles pages contenant des images en texte. Les documents ainsi traités sont ensuite découpés en chunks, c’est-à-dire en morceaux de texte cohérents d’environ 1 000 caractères, afin de pouvoir être indexés de manière fine et précise. Une fois ce découpage réalisé, chaque chunk est transformé en un embedding, c’est-à-dire une représentation vectorielle du texte. Concrètement, ce procédé permet de traduire un paragraphe en un vecteur numérique, ce qui rend possible l’application de calculs mathématiques pour comparer et rapprocher des textes entre eux. Ces vecteurs sont stockés dans une base spécialisée, ChromaDB, choisie pour sa simplicité d’utilisation ainsi que pour ses bonnes performances en local comme en cloud.",
+               "content2":"Lorsqu’un utilisateur pose une question, celle-ci est elle-même convertie en embedding. Le système effectue alors une recherche de similarité dans ChromaDB afin d’identifier les chunks les plus pertinents, en comparant la question vectorisée aux paragraphes vectorisés. Les passages retenus sont ensuite intégrés dans un prompt envoyé à un modèle de langage (LLM), tel que Mistral ou DeepSeek, garantissant une réponse contextualisée et directement liée aux documents internes",
                "class": "introduction",
                "size":"moyen"
             },
