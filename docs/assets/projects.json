@@ -145,7 +145,7 @@
             {
                "title": "RESILIEAU",
                "content": "RESILIEAU...",
-               "content2": "J'ai trouvé lors de la prise en compte de l'application un problème d'injection de données. ."
+               "content2": "Lors de la prise en compte d’un résiliau, j’ai identifié une erreur dans le code qui introduisait une faille d’injection. En effectuant des tests avec Postman, j’ai constaté qu’il était possible de modifier son propre identifiant dans la requête HTTP et ainsi accéder ou altérer les données d’autres utilisateurs. Cette vulnérabilité représentait un risque majeur en matière de sécurité et de confidentialité. J’ai alors remonté l’anomalie et travaillé à la mise en place de contrôles renforcés côté serveur (vérification des droits et filtrage des paramètres) afin de corriger la faille et sécuriser l’application."
             }
          ]
        },
